@@ -10,6 +10,7 @@ import com.java_app.certification.modules.students.useCases.StudentCertification
 import com.java_app.certification.modules.students.useCases.VerifyIfHasCertificationUseCase;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -36,9 +37,12 @@ public class StudentController {
 	}
 
 	@PostMapping("certification/answer")
-	public CertificationStudentEntity certificationAnswer(@RequestBody StudentCertificationAnswerDTO dto) {
-
-		return studentCertificationAnswersUseCases.execute(dto);
+	public ResponseEntity<Object> certificationAnswer(@RequestBody StudentCertificationAnswerDTO dto) {
+		try {
+			var result = studentCertificationAnswersUseCases.execute(dto);
+			return ResponseEntity.ok().body(result);
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
-
 }
