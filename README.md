@@ -12,7 +12,7 @@ A system where users can receive a certification according to their answers to a
 - Lombok
 - Hibernate
 
-### Prerequisites
+## Prerequisites
 
 * Java;
 * Maven;
@@ -34,9 +34,9 @@ A system where users can receive a certification according to their answers to a
 
 After all the setup, the application will be avalable at `http://localhost:8085` (tested with https://hoppscotch.io).
 
-## HTTP
+### HTTP
 
-## POST - `/students/verifyIfHasCertificationP`
+### POST - `/students/verifyIfHasCertification`
 
 Verify if a student already has a certification.
 
@@ -47,11 +47,11 @@ Verify if a student already has a certification.
 }
 ```
 
-## GET - `/questions/technology/{technology` (only JAVA is implemented so far)
+### GET - `/questions/technology/{technology}` (only JAVA is implemented so far)
 
 If the student doesn't have a certification already, then it displays the questions related to the passed technology.
 
-## POST - `/students/certification/answer`
+### POST - `/students/certification/answer`
 
 The studen should pass the answers to the questions.
 
@@ -72,7 +72,7 @@ The studen should pass the answers to the questions.
 }
 ```
 
-## GET - `/ranking/top10`
+### GET - `/ranking/top10`
 
 Rank the top 10 students who has got the most answers correct.
 
