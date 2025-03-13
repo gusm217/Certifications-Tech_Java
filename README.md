@@ -1,4 +1,4 @@
-## Certification App - by NLW
+## Tech Certifications - by NLW
 A system where users can receive a certification according to their answers to a test related to a technology of their choice.
 
 ## Used Technologies
